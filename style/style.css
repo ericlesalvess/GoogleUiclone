@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+*,input, button{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body{
+    height: 100%;/* body e html tamanho de 100% para utilizar td espaço disponivel */
+}
+
+body{
+    display:flex; /* display flex no body faz content utilizar todo espaço disponivel  */
+    flex-direction:column;
+}
+/* Header */
+
+.menu{height:48px;
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    align-items: center;
+    
+}
+
+.menu-section{
+    display:flex;
+    align-items: center;
+}
+
+.menu-section.left .menu-icon{
+    padding:12px 16px;
+
+}
+
+.menu-link {
+    text-transform: uppercase; /* transforma em maisculo */
+    font-size:12px;
+    font-weight: 600;
+    color:#757575;
+    padding:12px 8px;
+}
+
+.menu-link.active{
+    color:#4285f4;
+    border-bottom: solid 2px #4285f4;
+}
+
+.menu-link::not(.active) /* link não ativo recebe borda invisível alinha os 2 */{ 
+  border-bottom: 2px;
+}
+.menu-section.right{
+  margin-right: 4px;
+}
+
+.menu-section.right .menu-icon{
+    padding:12px;
+}
+
+.menu-profile{
+    padding:4px;
+    width:40px;
+    height:40px;
+    position:relative;/* relative no pai para encapusular o position absolute  */
+}
+
+.menu-avatar{
+    width:32px;
+    height: 32px;
+    border-radius:50%;
+  
+}
+
+.menu-avatar--frame{
+    position:absolute;/* vai saltar pra camada pai onde tiver position diferente de static*/
+    top:0 ;
+    left:0 ;
+}
+
+/* Main */
+
+.content{
+    display:flex;
+    flex:1; /* para usar tdo espaço disponivel */
+    flex-direction:column;
+    align-items: center;
+    padding: 56px 8px 0px;
+}
+
+.content-logo{
+    height: 56px;
+    
+}
+
+.content-search{
+    margin-top:10px;
+    width:100%;
+    max-width:736px;
+    padding:7px 10px 6px 20px;
+    font-size:18px;
+    color:rgba(0, 0, 0, 0.87);
+    background:transparent;
+    border-radius:25px;
+    border: 1px solid #dadce0;
+    outline: 0;
+}
+
+.content-offer{
+    margin-top: 24px;
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+.content-offer a{
+    text-decoration:none;
+    color: #1967d2;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top: 24px;
+    display:flex;
+    flex-direction:column;
+    background: #f2f2f2;
+}
+
+.footer-section:not(:first-child)/* Footer que não é o primeiro filho, borda entre os 2 footer tbm poderia ser resolvido com classe no segundo footer nesse caso*/{
+    border-top: 1px solid #e4e4e4;
+}
+.footer-cima {
+   font-size:16px;
+   color:#5f6368;
+   padding:10px 12px;
+}
+
+.footer-baixo{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+    font-size:13px;
+    color:#5f6368;
+    padding:10px;
+}
+
+.footer-baixo a:not(:first-child){
+    margin-left: 27px;
+}
+
+/* MEDIA QUERY */
+
+@media(min-width:763px){
+    .content{
+        margin-top:20px;
+    }
+    .content-logo{
+        height: 120px;
+    }
+}
